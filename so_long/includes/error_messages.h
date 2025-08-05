@@ -10,15 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#ifndef ERROR_MESSAGES_H
+# define ERROR_MESSAGES_H
 
-int main(int argc, char **argv)
-{
-	t_game	game;
 
-	if (ft_args_check(argc, argv) == 1)
-		return (1);
-	game = ft_init_game();
-	ft_get_map(argv[1], &game);
-	return (0);
-}
+//					ARG Errors
+# define INVALID_NBR_ARGS "Invalid Number of Arguments" 
+
+//					Map Errors
+# define INVALID_MAP_FILE ""
+# define NULL_MAP "NULL Map Argument"
+
+#endif

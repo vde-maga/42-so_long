@@ -12,13 +12,20 @@
 
 #include "so_long.h"
 
-int main(int argc, char **argv)
+int	ft_valid_filetype(char *map_file)
 {
-	t_game	game;
+	size_t	i;
 
-	if (ft_args_check(argc, argv) == 1)
+	i = ft_strlen(map_file) - 4;
+	if (ft_strncmp(".ber", &map_file, 4) == 0)
 		return (1);
-	game = ft_init_game();
-	ft_get_map(argv[1], &game);
 	return (0);
+}
+
+void	ft_get_map(char *map_file, t_game *game)
+{
+	if (ft_valid_filetype(map_file) == 1)
+		ft_error(game, INVALID_MAP_FILE);
+	ft_get_rows(map_file, game);
+
 }

@@ -12,13 +12,22 @@
 
 #include "so_long.h"
 
-int main(int argc, char **argv)
+t_game	ft_init_game(void)
 {
 	t_game	game;
 
-	if (ft_args_check(argc, argv) == 1)
-		return (1);
-	game = ft_init_game();
-	ft_get_map(argv[1], &game);
-	return (0);
+	game.map.map = NULL;
+	game.map.rows = 0;
+	game.map.columns = 0;
+	game.map.collectibles = 0;
+	game.map.exit = 0;
+	game.map.player = 0;
+	game.tiles.wall = NULL;
+	game.tiles.floor = NULL;
+	game.tiles.player = NULL;
+	game.tiles.collectible = NULL;
+	game.tiles.exit = NULL;
+	game.moves = -1;
+	return (game);
 }
+

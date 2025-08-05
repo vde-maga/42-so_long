@@ -10,15 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+typedef struct s_point {
+	int	x;
+	int	y;
+}				t_point;
 
-int main(int argc, char **argv)
-{
-	t_game	game;
+typedef struct s_map {
+	char			**map;
+	int				rows;
+	int				columns;
+	int				collectibles;
+	int				exit;
+	int				player;
+	t_point			player_pos;
+}				t_map;
 
-	if (ft_args_check(argc, argv) == 1)
-		return (1);
-	game = ft_init_game();
-	ft_get_map(argv[1], &game);
-	return (0);
-}
+typedef struct s_tiles {
+	void	*wall;
+	void	*floor;
+	void	*player;
+	void	*collectible;
+	void	*exit;
+}				t_tiles;
+
+typedef struct s_game {
+	t_map		map;
+	void		*mlx_ptr;
+	void		*win_ptr;
+	t_tiles		tiles;
+	int			moves;
+}				t_game;

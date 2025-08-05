@@ -1,24 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/05 14:59:30 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/05 18:02:43 by vde-maga         ###   ########.fr       */
+/*   Created: 2025/04/12 17:09:03 by vde-maga          #+#    #+#             */
+/*   Updated: 2025/04/14 14:18:27 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int main(int argc, char **argv)
+void	ft_putstr_fd(char *s, int fd)
 {
-	t_game	game;
+	int	i;
 
-	if (ft_args_check(argc, argv) == 1)
-		return (1);
-	game = ft_init_game();
-	ft_get_map(argv[1], &game);
+	if (!s || fd < 0)
+		return ;
+	i = 0;
+	while (s[i])
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
+}
+
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+	{
+		i++;
+	}
+	return (i);
+}
+
+int	ft_strncmp(char *s1, char *s2, size_t n)
+{
+	while ((*s1 || *s2) && n > 0)
+	{
+		if (*s1 != *s2)
+			return ((unsigned char)*s1 - (unsigned char)*s2);
+		s1++;
+		s2++;
+		n--;
+	}
 	return (0);
 }

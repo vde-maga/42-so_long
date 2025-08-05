@@ -10,15 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#ifndef SO_LONG_H
+# define SO_LONG_H
 
-int main(int argc, char **argv)
-{
-	t_game	game;
+# include <limits.h>
+# include <stdlib.h>
+# include <unistd.h>
 
-	if (ft_args_check(argc, argv) == 1)
-		return (1);
-	game = ft_init_game();
-	ft_get_map(argv[1], &game);
-	return (0);
-}
+# include "error_messages.h"
+# include "game.h"
+
+void	ft_args_check(int argc, char **argv);
+t_game	ft_init_game(void);
+
+
+// Errors
+void	ft_error(t_game *game, char *error_msg);
+
+
+// LIBFT
+void	ft_putstr_fd(char *s, int fd);
+size_t	ft_strlen(const char *str);
+int	ft_strncmp(char *s1, char *s2, size_t n);
+
+#endif

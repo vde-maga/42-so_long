@@ -12,13 +12,17 @@
 
 #include "so_long.h"
 
-int main(int argc, char **argv)
+int	ft_args_check(int argc, char **argv)
 {
-	t_game	game;
-
-	if (ft_args_check(argc, argv) == 1)
+	if (argc != 2)
+	{
+		ft_error(NULL, INVALID_NBR_ARGS);
 		return (1);
-	game = ft_init_game();
-	ft_get_map(argv[1], &game);
+	}
+	else if (*argv[1] == '\0')
+	{
+		ft_error(NULL, NULL_MAP);
+		return (1);
+	}
 	return (0);
 }

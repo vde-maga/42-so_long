@@ -12,13 +12,11 @@
 
 #include "so_long.h"
 
-int main(int argc, char **argv)
+void	ft_error(t_game *game, char *error_msg)
 {
-	t_game	game;
-
-	if (ft_args_check(argc, argv) == 1)
-		return (1);
-	game = ft_init_game();
-	ft_get_map(argv[1], &game);
-	return (0);
+	ft_free_game(game);
+	ft_putstr_fd("Error: ", STDERR_FILENO);
+	ft_putstr_fd(error, STDERR_FILENO);
+	//exit(EXIT_FAILURE);
 }
+
