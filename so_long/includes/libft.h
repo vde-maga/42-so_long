@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   args_check.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 14:59:30 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/06 17:05:14 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/08/06 20:03:54 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-int	ft_args_check(int argc, char **argv)
-{
-	if (argc != 2)
-	{
-		ft_error(NULL, INVALID_NBR_ARGS);
-		return (1);
-	}
-	else if (*argv[1] == '\0')
-	{
-		ft_error(NULL, NULL_MAP);
-		return (1);
-	}
-	return (0);
-}
+void	ft_putstr_fd(char *s, int fd);
+int	ft_strlen(const char *str);
+int	ft_strncmp(char *s1, char *s2, size_t n);
+char	*ft_trim_free(char *s1, char *set);
+char	*ft_strchr(char *s, int c);
+
+#endif

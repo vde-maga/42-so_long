@@ -6,11 +6,19 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 17:09:03 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/04/14 14:18:27 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/08/06 19:39:39 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+//#include <fcntl.h>
+//#include <unistd.h>
+//#include <stdio.h>
+
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}
 
 void	ft_putstr_fd(char *s, int fd)
 {
@@ -21,32 +29,29 @@ void	ft_putstr_fd(char *s, int fd)
 	i = 0;
 	while (s[i])
 	{
-		write(fd, &s[i], 1);
+		ft_putchar_fd(s[i], fd);
 		i++;
 	}
 }
 
-size_t	ft_strlen(const char *str)
+/*
+int	main(void)
 {
-	size_t	i;
+	int	fd;
 
-	i = 0;
-	while (str[i])
+	ft_putstr_fd("Teste: Hello, world!\n", 1);
+	ft_putstr_fd("", 1);
+	ft_putstr_fd("\n", 1);
+	fd = open("teste.txt", O_CREAT | O_WRONLY | O_TRUNC, 0644);
+	if (fd < 0)
 	{
-		i++;
+		perror("Erro ao abrir o arquivo");
+		return (1);
 	}
-	return (i);
-}
-
-int	ft_strncmp(char *s1, char *s2, size_t n)
-{
-	while ((*s1 || *s2) && n > 0)
-	{
-		if (*s1 != *s2)
-			return ((unsigned char)*s1 - (unsigned char)*s2);
-		s1++;
-		s2++;
-		n--;
-	}
+	ft_putstr_fd("Este é um teste para escrever no arquivo teste.txt\n", fd);
+	close(fd);
+	ft_putstr_fd(NULL, 1);
+	ft_putstr_fd("Teste com fd inválido\n", -1);
 	return (0);
 }
+*/

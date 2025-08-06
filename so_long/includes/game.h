@@ -1,14 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   game.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 14:59:30 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/05 18:02:43 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/08/06 17:05:36 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef GAME_H
+# define GAME_H
 
 typedef struct s_point {
 	int	x;
@@ -17,7 +20,7 @@ typedef struct s_point {
 
 typedef struct s_map {
 	char			**map;
-	int				rows;
+	int				lines;
 	int				columns;
 	int				collectibles;
 	int				exit;
@@ -40,3 +43,5 @@ typedef struct s_game {
 	t_tiles		tiles;
 	int			moves;
 }				t_game;
+
+#endif

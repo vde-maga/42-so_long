@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/05 14:59:30 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/05 18:02:43 by vde-maga         ###   ########.fr       */
+/*   Created: 2025/05/11 14:45:43 by vde-maga          #+#    #+#             */
+/*   Updated: 2025/08/06 19:44:46 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
-int	ft_valid_filetype(char *map_file)
-{
-	size_t	i;
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
-	i = ft_strlen(map_file) - 4;
-	if (ft_strncmp(".ber", &map_file, 4) == 0)
-		return (1);
-	return (0);
-}
+# include <stdlib.h>
+# include <unistd.h>
 
-void	ft_get_map(char *map_file, t_game *game)
-{
-	if (ft_valid_filetype(map_file) == 1)
-		ft_error(game, INVALID_MAP_FILE);
-	ft_get_rows(map_file, game);
+char	*ft_get_next_line(int fd);
+char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strdup(char *s1);
+char	*ft_substr(char *s, unsigned int start, size_t len);
 
-}
+#endif

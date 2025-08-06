@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   args_check.c                                       :+:      :+:    :+:   */
+/*   ft_map_check.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/05 14:59:30 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/06 17:05:14 by vde-maga         ###   ########.fr       */
+/*   Created: 2025/08/06 17:02:34 by vde-maga          #+#    #+#             */
+/*   Updated: 2025/08/06 19:52:10 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	ft_args_check(int argc, char **argv)
+int	ft_map_check(t_game *game)
 {
-	if (argc != 2)
+	if (ft_valid_format(game) == 1)
 	{
-		ft_error(NULL, INVALID_NBR_ARGS);
+		ft_error(game, INVALID_FORMAT);
 		return (1);
 	}
-	else if (*argv[1] == '\0')
+	if (ft_check_tiles(game) == 1)
 	{
-		ft_error(NULL, NULL_MAP);
+		ft_error(game, INVALID_TILE);
+		return (1);
+	}
+	if (ft_check_invalid_requirements(game) == 1)
+		return (1);
+	if (ft_is_covered_by_walls(&game->map) == 1)
+	{
+		ft_error(game, MAP_NOT_CLOSED);
 		return (1);
 	}
 	return (0);
