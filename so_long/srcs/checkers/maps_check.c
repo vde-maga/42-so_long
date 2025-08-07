@@ -6,7 +6,7 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 18:44:23 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/06 19:58:42 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/08/07 17:04:57 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_valid_format(t_game *game)
 
 	length = game->map.columns;
 	i = 0;
-	while (game->map.map[i])
+	while (game->map.map[i] != NULL)
 	{
 		if (length != ft_strlen(game->map.map[i]))
 			return (1);

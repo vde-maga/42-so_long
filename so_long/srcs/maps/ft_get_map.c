@@ -6,7 +6,7 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 14:59:30 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/06 19:47:03 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/08/07 16:30:03 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 int	ft_valid_filetype(char *map_file)
 {
-	size_t	i;
-	size_t	length;
+	int	i;
+	int	length;
 
 	length = ft_strlen(map_file);
 	if (length <= 4)
-		return (1);
+		return (0);
 	i = length - 4;
-	if (ft_strncmp(".ber", &map_file[i], 4) != 0)
+	if (ft_strncmp(".ber", &map_file[i], 4) == 0)
 		return (1);
-	else if (ft_strncmp(".BER", &map_file[i], 4) != 0)
+	else if (ft_strncmp(".BER", &map_file[i], 4) == 0)
 		return (1);
 	else
 		return (0);
@@ -58,8 +58,8 @@ void	ft_complete_map(char *map_file, t_game *game)
 
 void	ft_get_nbr_map_lines(char *map_file, t_game *game)
 {
-	int	lines;
-	int	map_file_descriptor;
+	int		lines;
+	int		map_file_descriptor;
 	char	*temp;
 
 	lines = 0;
@@ -84,7 +84,7 @@ void	ft_get_map(char *map_file, t_game *game)
 	if (ft_valid_filetype(map_file) == 1)
 		ft_error(game, INVALID_MAP_FILE);
 	ft_get_nbr_map_lines(map_file, game);
-	game->map.map = (char **) malloc ((game->map.lines + 1) * sizeof(char *));
+	game->map.map = (char **)malloc((game->map.lines + 1) * sizeof(char *));
 	if (!game->map.map)
 		ft_error(game, MALLOC_ERROR);
 	ft_complete_map(map_file, game);

@@ -6,13 +6,12 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 14:59:30 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/06 22:01:45 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/08/07 16:57:02 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ERROR_MESSAGES_H
 # define ERROR_MESSAGES_H
-
 
 # define MALLOC_ERROR "malloc() Failed"
 
@@ -34,4 +33,7 @@
 //					Open Map File Error
 # define FAILED_OPEN_MAP_FILE "Failed to Open Map File"
 
+//					MLX Errors
+# define MLX_INIT_ERROR "Failed to Initialize MLX"
+# define MLX_WINDOW_ERROR "Failed to Open the Window"
 #endif
