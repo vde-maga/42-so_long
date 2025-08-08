@@ -6,7 +6,7 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 14:59:30 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/07 16:30:03 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/08/08 18:00:48 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,17 @@
 
 int	ft_valid_filetype(char *map_file)
 {
-	int	i;
-	int	length;
+	char	*temp;
 
-	length = ft_strlen(map_file);
-	if (length <= 4)
+	temp = ft_strrchr(map_file, '.');
+	if (!temp)
+		return (1);
+	if (ft_strncmp(".ber", temp, ft_strlen(temp)) == 0)
 		return (0);
-	i = length - 4;
-	if (ft_strncmp(".ber", &map_file[i], 4) == 0)
-		return (1);
-	else if (ft_strncmp(".BER", &map_file[i], 4) == 0)
-		return (1);
+	else if (ft_strncmp (".BER", temp, ft_strlen(temp)) == 0)
+		return (0);
 	else
-		return (0);
+		return (1);
 }
 
 void	ft_complete_map(char *map_file, t_game *game)
@@ -46,7 +44,7 @@ void	ft_complete_map(char *map_file, t_game *game)
 	game->map.map[i] = NULL;
 	close(map_file_descriptor);
 	i = 0;
-	while (i < (game->map.lines - 1))
+	while (i < (game->map.lines))
 	{
 		game->map.map[i] = ft_trim_free(game->map.map[i], "\n");
 		if (!game->map.map[i])

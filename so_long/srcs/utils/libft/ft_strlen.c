@@ -6,7 +6,7 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 15:49:56 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/06 19:31:07 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/08/08 16:30:45 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,8 @@ int	ft_strlen(const char *str)
 	int	i;
 
 	i = 0;
-	while (str[i])
-	{
+	while (str && str[i])
 		i++;
-	}
 	return (i);
 }
 /*

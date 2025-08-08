@@ -6,7 +6,7 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 14:13:43 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/07 16:09:06 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/08/08 16:31:22 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	char	*joined;
 	size_t	i;
 	size_t	j;
-
+	
 	joined = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	if (!joined)
 		return (NULL);

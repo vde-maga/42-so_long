@@ -6,7 +6,7 @@
 #    By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/05 18:37:54 by vde-maga          #+#    #+#              #
-#    Updated: 2025/08/05 15:45:38 by vde-maga         ###   ########.fr        #
+#    Updated: 2025/08/08 16:11:11 by vde-maga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ INC_DIR       = includes
 MLX_DIR       = minilibx-linux
 
 # Compiling Flags
-CFLAGS        = -Wall -Wextra -Werror -I$(INC_DIR) -I$(MLX_DIR)
+CFLAGS        = -Wall -Wextra -Werror -I$(INC_DIR) -I$(MLX_DIR) -g
 
 # Flags do Linker - A GRANDE NOVIDADE PARA O SO_LONG
 # -L aponta para a pasta da biblioteca

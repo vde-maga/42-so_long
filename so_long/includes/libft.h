@@ -15,8 +15,9 @@
 
 void	ft_putstr_fd(char *s, int fd);
 int		ft_strlen(const char *str);
-int		ft_strncmp(char *s1, char *s2, size_t n);
+int		ft_strncmp(char *s1, char *s2, int n);
 char	*ft_trim_free(char *s1, char *set);
 char	*ft_strchr(char *s, int c);
+char	*ft_strrchr(const char *s, int c);
 
 #endif
