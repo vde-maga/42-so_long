@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   textures.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/05 14:59:30 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/09 11:49:46 by vde-maga         ###   ########.fr       */
+/*   Created: 2025/08/09 11:59:55 by vde-maga          #+#    #+#             */
+/*   Updated: 2025/08/11 17:39:24 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#ifndef TEXTURES_H
+# define TEXTURES_H
 
-int	main(int argc, char **argv)
-{
-	t_game	game;
+# define TILE_SIZE 64
 
-	if (ft_args_check(argc, argv) == 1)
-		return (1);
-	game = ft_init_game();
-	ft_get_map(argv[1], &game);
-	if (ft_map_check(&game) == 1)
-		return (1);
-	if (ft_init_mlx(&game) == 1)
-		return (1);
-	ft_render_map(&game);
-	return (0);
-}
+# define WALL_TEXTURE "../textures/test.xmp"
+# define FLOOR_TEXTURE "../textures/test.xmp"
+# define PLAYER_TEXTURE "../textures/test.xmp"
+//# define ENEMY_TEXTURE
+# define COLLECTIBLE_TEXTURE "../textures/test.xmp"
+# define EXIT_TEXTURE "../textures/test.xmp"
+
+#endif

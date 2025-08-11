@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_render_map.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/05 14:59:30 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/09 11:49:46 by vde-maga         ###   ########.fr       */
+/*   Created: 2025/08/09 11:50:25 by vde-maga          #+#    #+#             */
+/*   Updated: 2025/08/09 11:53:58 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int argc, char **argv)
-{
-	t_game	game;
 
-	if (ft_args_check(argc, argv) == 1)
-		return (1);
-	game = ft_init_game();
-	ft_get_map(argv[1], &game);
-	if (ft_map_check(&game) == 1)
-		return (1);
-	if (ft_init_mlx(&game) == 1)
-		return (1);
-	ft_render_map(&game);
-	return (0);
+
+void	ft_render_map(t_game *game)
+{
+	ft_init_textures(game);
+	ft_render_textures(game);
 }

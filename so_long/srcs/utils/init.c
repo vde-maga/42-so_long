@@ -6,7 +6,7 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 14:59:30 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/07 16:56:36 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/08/11 17:27:54 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,17 @@ int	ft_init_mlx(t_game *game)
 		return (1);
 	}
 	return (0);
+}
+
+void	ft_init_textures(t_game *game)
+{
+	int	texture_size;
+
+	texture_size = TILE_SIZE;
+	game->tiles.wall = mlx_xpm_file_to_image(game->mlx_ptr, WALL_TEXTURE, &texture_size, &texture_size);
+	game->tiles.wall = mlx_xpm_file_to_image(game->mlx_ptr, FLOOR_TEXTURE, &texture_size, &texture_size);
+	game->tiles.wall = mlx_xpm_file_to_image(game->mlx_ptr, PLAYER_TEXTURE, &texture_size, &texture_size);
+	game->tiles.wall = mlx_xpm_file_to_image(game->mlx_ptr, COLLECTIBLE_TEXTURE, &texture_size, &texture_size);
+	game->tiles.wall = mlx_xpm_file_to_image(game->mlx_ptr, EXIT_TEXTURE, &texture_size, &texture_size);
+	ft_check_errors_in_textures(game);
 }

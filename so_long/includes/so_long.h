@@ -6,7 +6,7 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 14:59:30 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/07 17:00:03 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/08/11 17:27:34 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 # include "get_next_line.h"
 # include "error_messages.h"
 # include "game.h"
+# include "textures.h"
 # include "../minilibx-linux/mlx.h"
 
-# define TILE_SIZE 64
 
 // ---------------------- Checkers ---------------------------------------------
 // Argument Checkers
@@ -40,14 +40,23 @@ int	ft_valid_tile_input(char c);
 // ---------------------- Map Logic ---------------------------------------------
 // Get File of Argument from Arguments
 void	ft_get_map(char *map_file, t_game *game);
-void	ft_complete_map(char *map_file, t_game *game);
+// Display Map on the Screen
+void	ft_render_map(t_game *game);
 
 // ---------------------- Init -------------------------------------------------
 // Initialize Game Struct
 t_game	ft_init_game(void);
 // Initialize MLX
 int	ft_init_mlx(t_game *game);
-// Errors
+// Initialize Game Textures
+void	ft_init_textures(t_game *game);
+
+// ---------------------- Textures -----------------------------------------------
+void	ft_render_textures(t_game *game);
+// Check for Errors In Textures
+void	ft_check_errors_in_textures(t_game *game);
+
+// ---------------------- Error -------------------------------------------------
 void	ft_error(t_game *game, char *error_msg);
 
 #endif

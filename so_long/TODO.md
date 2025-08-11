@@ -4,4 +4,5 @@
 4. logica da exit + so funcionar com os coleataveis
 5. verificar com o gpt, se pode existir algum erro de parsing
 
-Resolver Memory Leaks de Quando o Mapa está correto!
+- Escolher as Texturas do Jogo
+- Colocar logica da textura do player

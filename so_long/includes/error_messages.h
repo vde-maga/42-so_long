@@ -6,7 +6,7 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 14:59:30 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/07 16:57:02 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/08/11 17:32:41 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,10 @@
 //					MLX Errors
 # define MLX_INIT_ERROR "Failed to Initialize MLX"
 # define MLX_WINDOW_ERROR "Failed to Open the Window"
+//					Textures Errors
+# define WALL_TEXTURE_ERROR "Failed to Open Wall Texture"
+# define FLOOR_TEXTURE_ERROR "Failed to Open Floor Texture"
+# define PLAYER_TEXTURE_ERROR "Failed to Open Player Texture"
+# define COLLECTIBLE_TEXTURE_ERROR "Failed to Open Collectible Texture"
+# define EXIT_TEXTURE_ERROR "Failed to Open Exit Texture"
 #endif
