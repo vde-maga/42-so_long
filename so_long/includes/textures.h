@@ -6,7 +6,7 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 11:59:55 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/11 17:39:24 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/08/11 18:12:57 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 # define TILE_SIZE 64
 
-# define WALL_TEXTURE "../textures/test.xmp"
-# define FLOOR_TEXTURE "../textures/test.xmp"
-# define PLAYER_TEXTURE "../textures/test.xmp"
-//# define ENEMY_TEXTURE
-# define COLLECTIBLE_TEXTURE "../textures/test.xmp"
-# define EXIT_TEXTURE "../textures/test.xmp"
+# define WALL_TEXTURE "../textures/wall.xpm"
+# define FLOOR_TEXTURE "../textures/floor.xpm"
+# define PLAYER_TEXTURE "../textures/player.xpm"
+//# define ENEMY_TEXTURE "../textures/enemie.xmp"
+# define COLLECTIBLE_TEXTURE "../textures/collectible.xpm"
+# define EXIT_TEXTURE "../textures/exit.xpm"
 
 #endif

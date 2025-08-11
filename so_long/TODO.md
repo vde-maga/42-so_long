@@ -4,5 +4,5 @@
 4. logica da exit + so funcionar com os coleataveis
 5. verificar com o gpt, se pode existir algum erro de parsing
 
-- Escolher as Texturas do Jogo
+- Potencialmente colocar todas as texturas 16x16
 - Colocar logica da textura do player
