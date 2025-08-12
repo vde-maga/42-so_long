@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   keys.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/05 14:59:30 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/11 23:09:00 by vde-maga         ###   ########.fr       */
+/*   Created: 2025/08/11 23:43:48 by vde-maga          #+#    #+#             */
+/*   Updated: 2025/08/12 15:50:31 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#ifndef KEYS_H
+# define KEYS_H
 
-int	main(int argc, char **argv)
-{
-	t_game	game;
+# define W 119
+# define A 97
+# define S 115
+# define D 100
 
-	if (ft_args_check(argc, argv) == 1)
-		return (1);
-	game = ft_init_game();
-	ft_get_map(argv[1], &game);
-	if (ft_map_check(&game) == 1)
-		return (1);
-	if (ft_init_mlx(&game) == 1)
-		return (1);
-	ft_render_map(&game);
-	ft_hook_and_run(&game);
-	return (0);
-}
+# define UP 65362
+# define LEFT 65361
+# define DOWN 65364
+# define RIGHT 65363
+
+# define ESC 65307
+
+#endif

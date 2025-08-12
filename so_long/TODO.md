@@ -6,3 +6,4 @@
 
 - Potencialmente colocar todas as texturas 16x16
 - Colocar logica da textura do player
+

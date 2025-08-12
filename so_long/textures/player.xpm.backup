@@ -3,8 +3,8 @@ static char *player[] = {
 /* columns rows colors chars-per-pixel */
 "18 23 3 1 ",
 "  c None",
-"X c #ff8000",
-".c #009479",
+". c #EFF5EF",
+"X c #111111",
 /* pixels */
 "       ..         ",
 "      .XX.        ",

@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   specific_tile_check.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/05 14:59:30 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/11 23:09:00 by vde-maga         ###   ########.fr       */
+/*   Created: 2025/08/12 16:02:25 by vde-maga          #+#    #+#             */
+/*   Updated: 2025/08/12 16:06:56 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int argc, char **argv)
+int	ft_current_tile_is_collectible(t_game *game)
 {
-	t_game	game;
+	if (game->map.map[game->map.player_pos.y][game->map.player_pos.x] == 'C' || game->map.map[game->map.player_pos.y][game->map.player_pos.x] == 'c')
+		return (1);
+	return (0);
+}
 
-	if (ft_args_check(argc, argv) == 1)
+int	ft_current_tile_is_exit(t_game *game)
+{
+	if (game->map.map[game->map.player_pos.y][game->map.player_pos.x] == 'E' || game->map.map[game->map.player_pos.y][game->map.player_pos.x] == 'e')
 		return (1);
-	game = ft_init_game();
-	ft_get_map(argv[1], &game);
-	if (ft_map_check(&game) == 1)
-		return (1);
-	if (ft_init_mlx(&game) == 1)
-		return (1);
-	ft_render_map(&game);
-	ft_hook_and_run(&game);
 	return (0);
 }

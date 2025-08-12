@@ -6,7 +6,7 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 17:05:55 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/11 17:39:43 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/08/12 00:37:12 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ void	ft_render_textures(t_game *game)
 		}
 		i++;
 	}
-	//ft_put_player_tile(game);
+	ft_put_first_player_tile(game);
 }

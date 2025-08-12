@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_exit_game.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/05 14:59:30 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/11 23:09:00 by vde-maga         ###   ########.fr       */
+/*   Created: 2025/08/12 13:23:44 by vde-maga          #+#    #+#             */
+/*   Updated: 2025/08/12 16:52:47 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int argc, char **argv)
+int	ft_exit_game(t_game *game)
 {
-	t_game	game;
-
-	if (ft_args_check(argc, argv) == 1)
-		return (1);
-	game = ft_init_game();
-	ft_get_map(argv[1], &game);
-	if (ft_map_check(&game) == 1)
-		return (1);
-	if (ft_init_mlx(&game) == 1)
-		return (1);
-	ft_render_map(&game);
-	ft_hook_and_run(&game);
+	ft_free_game(game);
+	exit(EXIT_SUCCESS);
 	return (0);
 }

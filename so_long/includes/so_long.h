@@ -6,7 +6,7 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 14:59:30 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/11 17:27:34 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/08/12 16:07:08 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include "get_next_line.h"
 # include "error_messages.h"
 # include "game.h"
+# include "keys.h"
 # include "textures.h"
 # include "../minilibx-linux/mlx.h"
 
@@ -36,6 +37,13 @@ int	ft_check_tiles(t_game *game);
 int	ft_check_invalid_requirements(t_game *game);
 int	ft_is_covered_by_walls(t_map *map);
 int	ft_valid_tile_input(char c);
+// Current Tile Check
+int	ft_current_tile_is_collectible(t_game *game);
+int	ft_current_tile_is_exit(t_game *game);
+
+
+// ---------------------- Engine Logic ---------------------------------------------
+void	ft_hook_and_run(t_game *game);
 
 // ---------------------- Map Logic ---------------------------------------------
 // Get File of Argument from Arguments
@@ -56,7 +64,13 @@ void	ft_render_textures(t_game *game);
 // Check for Errors In Textures
 void	ft_check_errors_in_textures(t_game *game);
 
+// ---------------------- Player -----------------------------------------------
+void	ft_put_first_player_tile(t_game *game);
+void	ft_update_player_pos(t_game *game, char c, int length);
+
 // ---------------------- Error -------------------------------------------------
 void	ft_error(t_game *game, char *error_msg);
+// ---------------------- End Game -------------------------------------------------
+int	ft_exit_game(t_game *game);
 
 #endif
