@@ -6,7 +6,7 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 14:59:30 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/12 13:26:01 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/08/13 14:09:19 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_free_game_tiles(t_game *game)
 }
 
 void	ft_check_errors_in_textures(t_game *game)
-{	
+{
 	if (!game->tiles.wall)
 		ft_error(game, WALL_TEXTURE_ERROR);
 	if (!game->tiles.floor)

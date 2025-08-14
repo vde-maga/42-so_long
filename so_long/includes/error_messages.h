@@ -6,7 +6,7 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 14:59:30 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/11 17:32:41 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/08/13 15:34:39 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@
 # define NO_COLLECTIBLES "Map Doesn't have any Collectibles (C)"
 # define INVALID_NBR_PLAYER "Invalid Number of Player (P)"
 # define INVALID_TILE "Invalid Type of Tile"
+# define EXIT_BLOCK "Player Cant Finish Game"
+
 
 //					Open Map File Error
 # define FAILED_OPEN_MAP_FILE "Failed to Open Map File"
