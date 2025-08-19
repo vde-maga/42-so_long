@@ -3,14 +3,14 @@ static char *wall[] = {
 /* columns rows colors chars-per-pixel */
 "32 32 3 1 ",
 "  c None",
-". c #ffffff",
+". c #EFF5EF",
 /*". c #ffffff",*/
-"X c #ffffff",
+"X c #EFF5EF",
 /*"X c #EFF5EF",*/
 /* pixels */
-"       ..................       ",
-"       ..................       ",
-"     ..XXXXXXXXXXXXXXXXXX.      ",
+"    ........................    ",
+"    ........................    ",
+"    ...XXXXXXXXXXXXXXXXXX...    ",
 "    .XXXXXXXXXXXXXXXXXXXXX..    ",
 "    .XXXXXXXXXXXXXXXXXXXXX..    ",
 "    .XXXXXXXX.XXXXXXXXXXXX..    ",
