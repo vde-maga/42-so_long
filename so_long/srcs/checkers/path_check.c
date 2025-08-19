@@ -6,7 +6,7 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 15:27:16 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/19 18:41:39 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/08/19 19:02:06 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	**ft_copy_grid(t_game *game)
 }
 
 int	ft_flood_fill(t_map *map, t_point curr, char **copied_grid,
-		int found_and_collected[2])
+		int collected_and_exit[2])
 {
 	if (curr.x < 0 || curr.x >= map->columns || curr.y < 0
 		|| curr.y >= map->lines)
@@ -48,19 +48,19 @@ int	ft_flood_fill(t_map *map, t_point curr, char **copied_grid,
 	if (copied_grid[curr.y][curr.x] == '1')
 		return (1);
 	if (copied_grid[curr.y][curr.x] == 'C')
-		found_and_collected[0]++;
+		collected_and_exit[0]++;
 	else if (copied_grid[curr.y][curr.x] == 'E')
-		found_and_collected[1] = 1;
+		collected_and_exit[1] = 1;
 	copied_grid[curr.y][curr.x] = '1';
 	ft_flood_fill(map, (t_point){curr.x + 1, curr.y}, copied_grid,
-		found_and_collected);
+		collected_and_exit);
 	ft_flood_fill(map, (t_point){curr.x - 1, curr.y}, copied_grid,
-		found_and_collected);
+		collected_and_exit);
 	ft_flood_fill(map, (t_point){curr.x, curr.y + 1}, copied_grid,
-		found_and_collected);
+		collected_and_exit);
 	ft_flood_fill(map, (t_point){curr.x, curr.y - 1}, copied_grid,
-		found_and_collected);
-	if (found_and_collected[0] == map->collectibles && found_and_collected[1])
+		collected_and_exit);
+	if (collected_and_exit[0] == map->collectibles && collected_and_exit[1])
 		return (1);
 	else
 		return (0);
@@ -69,7 +69,7 @@ int	ft_flood_fill(t_map *map, t_point curr, char **copied_grid,
 int	ft_check_path(t_game *game)
 {
 	char		**copied_grid;
-	static int	found_and_collected[2] = {0, 0};
+	static int	collected_and_exit[2] = {0, 0};
 	int			is_valid;
 
 	copied_grid = ft_copy_grid(game);
@@ -79,7 +79,7 @@ int	ft_check_path(t_game *game)
 		return (1);
 	}
 	is_valid = ft_flood_fill(&game->map, game->map.player_pos, copied_grid,
-			found_and_collected);
+			collected_and_exit);
 	ft_free_game_map(copied_grid);
 	if (!is_valid)
 	{
