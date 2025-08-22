@@ -31,7 +31,7 @@ t_game	ft_init_game(void)
 	game.tiles.player = NULL;
 	game.tiles.collectible = NULL;
 	game.tiles.exit = NULL;
-	game.moves = -1;
+	game.moves = 0;
 	return (game);
 }
 

@@ -6,7 +6,7 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 23:43:48 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/12 15:50:31 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/08/20 15:10:51 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,11 @@
 # define RIGHT 65363
 
 # define ESC 65307
+# define Q 113
+
+# define KEY_PRESS_MASK 1
+# define STRUCTURE_NOTIFY_MASK 131072
+# define KEY_PRESS 2
+# define DESTROY_NOTIFY 17
 
 #endif

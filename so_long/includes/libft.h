@@ -6,14 +6,14 @@
 /*   By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 14:59:30 by vde-maga          #+#    #+#             */
-/*   Updated: 2025/08/13 16:17:25 by vde-maga         ###   ########.fr       */
+/*   Updated: 2025/08/20 15:08:49 by vde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include <stdlib.h>
+# include <stdlib.h>
 
 void	ft_putstr_fd(char *s, int fd);
 int		ft_strlen(const char *str);

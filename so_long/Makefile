@@ -6,7 +6,7 @@
 #    By: vde-maga <vde-maga@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/05 18:37:54 by vde-maga          #+#    #+#              #
-#    Updated: 2025/08/19 14:25:37 by vde-maga         ###   ########.fr        #
+#    Updated: 2025/08/20 14:16:04 by vde-maga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,6 +63,8 @@ $(NAME): $(OBJS) $(MLX_LIB)
 	$(CC) $(OBJS) $(LDFLAGS) -o $(NAME)
 	@echo "$(GREEN)Done! Execute ./$(NAME)$(RESET)"
 
+bonus: all
+
 # ---------------------- Compiling ---------------------------------------------
 
 # MiniLibX Compiling
@@ -93,4 +95,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re
